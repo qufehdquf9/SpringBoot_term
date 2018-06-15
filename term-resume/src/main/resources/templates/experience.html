@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout/layout}">
+
+<div layout:fragment="content">
+    
+
+    <div class="container-fluid p-0">
+ 
+
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+            <div class="my-auto">
+                <h2 class="mb-5">경력 </h2>
+
+                <div class="text-md-right">
+                    <button class="btn-primary"><a class="nav-link js-scroll-trigger" href="/experience/register"> 등록하기</a></button>
+                </div>
+
+                <hr/>
+
+                <div class="resume-item d-flex flex-column flex-md-row mb-5" th:each="experience:${result}">
+                    <div class="resume-content mr-auto">
+        					<h2><a th:href='${experience.rno}'>[[${experience.rno}]]</a></h2>
+                        	<h3 class="mb-0">[[${experience.myPosition}]]</h3>
+                        	<div class="subheading mb-3">[[${experience.projectName}]]</div>
+                        	<p>[[${experience.projectContent}]]</p>
+                        	<div>
+                            <button class="btn-info"><a class="btn btn-primary" th:href="@{/experience/} + ${experience.rno}+@{/update}"> 수정</a></button>
+                            <button class="btn-info"><a class="btn btn-primary" th:href="@{/experience/} + ${experience.rno}+@{/delete}"> 삭제</a></button>
+                        	</div>
+                    </div>
+                    <div class="resume-date text-md-right">
+                        <span class="text-primary">[[${experience.term}]]</span>
+                    </div>
+                </div>
+            </div>
+   </section>
+   </div>
+   </div>
+   </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout/layout}">
+      <div layout:fragment="content">
+	<table class="table table-striped table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>myPosition</th>
+				<th>projectName</th>
+				<th>projectContent</th>
+				<th>term</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>[[${result.myPosition}]]</a></td>
+				<td>[[${result.projectName}]]</td>
+				<td>[[${result.projectContent}]]</td>
+				<td>[[${result.term}]]</td>
+				
+			</tr>
+		</tbody>		
+	</table>
+	<a class="btn btn-primary" th:href="@{/experience/} + ${result.rno}+@{/delete}">delete</a>
+	<a class="btn btn-primary" th:href="@{/experience/} + ${result.rno}+@{/update}">update</a>
+</div>
+      
+      
+      
+</html>
