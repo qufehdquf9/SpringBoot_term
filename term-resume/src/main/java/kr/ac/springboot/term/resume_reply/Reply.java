@@ -21,8 +21,8 @@ public class Reply {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long rno;
-    private String name;
-    private String content;
+    private String replyer;
+    private String replyText;
     
 	@CreationTimestamp
     private Timestamp regdate;
@@ -33,10 +33,13 @@ public class Reply {
     @JsonIgnore
     @ManyToOne(fetch=FetchType.LAZY)
     private Resume resume;
-
-	public Reply(String name, String content, Resume resume) {
-		this.name = name;
-		this.content = content;
+    
+    public Reply() {
+    	
+    }
+	public Reply(String replyer, String replyText, Resume resume) {
+		this.replyer = replyer;
+		this.replyText = replyText;
 		this.resume = resume;
 	}
 
@@ -48,20 +51,20 @@ public class Reply {
 		this.rno = rno;
 	}
 
-	public String getName() {
-		return name;
+	public String getReplyer() {
+		return replyer;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setReplyer(String replyer) {
+		this.replyer = replyer;
 	}
 
-	public String getContent() {
-		return content;
+	public String getReplyText() {
+		return replyText;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setReplyText(String replyText) {
+		this.replyText = replyText;
 	}
 
 	public Timestamp getRegdate() {

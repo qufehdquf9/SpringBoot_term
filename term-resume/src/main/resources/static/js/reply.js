@@ -7,8 +7,8 @@ var replyManager = (function () {
 
     var add = function (obj, callback) {
 
-        console.log("add....");
-
+        console.log(obj.bno);
+        
         $.ajax({
             type: 'post',
             url: '/replies/' + obj.bno,

@@ -112,7 +112,7 @@ public class Resume {
 	}
 
 
-    public Long geBno() {
+    public Long getBno() {
         return bno;
     }
 
